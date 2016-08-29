@@ -106,9 +106,59 @@
             .date {
                 font-size: 11px;
             }
+            
+            .splash-bg {
+                position: absolute;
+                background: url("https://www.kasandbox.org/programming-images/landscapes/mountains-in-hawaii.png") fixed no-repeat;
+                background-size: cover;
+                height: 101%;
+                width: 725px;
+                margin-top: -100px;
+                margin-left: -10px;
+                -webkit-filter: contrast(60%) sepia(30%) blur(2px);
+                z-index: -1;
+            }
+            .splash-icon {
+                color: white;
+                text-align: CENter;
+                font-size: 140px;
+                margin-bottom: 20px;
+            }
+            .splash-btn {
+                display: block;
+                
+                font-family: Lato;
+                background: rgba(255, 255, 255, 0.3);
+                color: rgb(246, 246, 246);
+                padding: 10px;
+                border-radius: 5px;
+                box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.3), 0px 5px rgb(246, 246, 246);
+                border: 2px rgb(246, 246, 246) solid;
+                width: 200px;
+                margin-left: auto;
+                margin-right: auto;
+                transition: all 0.1s;
+                
+                font-size: 30px;
+                font-weight: 100;
+                letter-spacing: 10px;
+            }
+            .splash-btn:hover {
+                cursor: pointer;
+            }
+            .splash-btn:active {
+                margin-top: 5px;
+                box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.3);
+            }
         </style>
     </head>
     <body>
+        <div class="splash">
+            <div class = "splash-bg"></div>
+            <h1 class = "splash-icon"><i class = "fa fa-send"></i></h1>
+            <button class = "splash-btn">ENTER</button>
+        </div>
+        
         <!-- The navigation bar -->
         <div class="dropdown">
             <button class="dropbtn fa fa-bars"></button>
@@ -235,9 +285,19 @@
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
+        $(".blog").hide();
         $(".about").hide();
         $(".schedule").hide();
         $(".contact").hide();
+        
+        $(".splash-btn").click(function (){
+            $(".splash").hide();
+            
+            $(".blog").show();
+            $(".about").hide();
+            $(".schedule").hide();
+            $(".contact").hide();
+        });
         
         $(".nav1").click(function() { 
             $(".blog").show();
