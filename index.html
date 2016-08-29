@@ -170,12 +170,14 @@
             </div>
         </div>
     
-    
-        <!-- The title -->
-        <h1>CHESTER BANKS</h1> 
         
-        <!-- The subtitle -->
-        <h3>making the game you want to play</h3>
+        <div class="title">
+            <!-- The title -->
+            <h1>CHESTER BANKS</h1> 
+            
+            <!-- The subtitle -->
+            <h3>making the game you want to play</h3>
+        </div>
         
         <!-- The blog -->
         <div class = "blog">
@@ -289,9 +291,11 @@
         $(".about").hide();
         $(".schedule").hide();
         $(".contact").hide();
+        $(".title").hide();
         
         $(".splash-btn").click(function (){
             $(".splash").hide();
+            $(".title").show();
             
             $(".blog").show();
             $(".about").hide();
